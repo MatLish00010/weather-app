@@ -1,0 +1,141 @@
+body {
+    background-color: deepskyblue;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 25rem;
+    padding: 5rem 2rem;
+}
+
+/*nav*/
+
+.navigation {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.navigation li {
+    margin-right: 2rem;
+}
+
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+/*link*/
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: aliceblue;
+}
+
+/*title*/
+.title {
+    color: white;
+    font-size: 1.6rem;
+}
+
+/*input*/
+.input {
+    padding: 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+/*btn*/
+.btn {
+    border: none;
+    background-color: cornflowerblue;
+    color: antiquewhite;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 0.2rem;
+    transition: 0.3s;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+.btn:hover {
+    background-color: white;
+    color: cornflowerblue;
+}
+
+/*card*/
+.card {
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+    width: 18.7rem;
+    background-color: black;
+    color: white;
+}
+
+
+.card-content {
+    border-top: 0.2rem solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.card__item-day {
+    background-color: #01afb0;
+    padding: 0.5rem;
+    margin: 0;
+    color: white;
+    font-size: 1.4rem;
+    border:none;
+    transition: 0.3s;
+}
+
+.card__item-day:hover {
+    background-color: white;
+    color: black;
+}
+
+/*error*/
+.error-message {
+    color: red;
+    background-color: black;
+    padding: 1rem;
+    width: max-content;
+}
+
+/*js*/
+
+.js-content-wrap {
+    overflow: auto;
+    height: 0;
+    transition: 0.3s height;
+
+}
+
+
+.is-open {
+    height: 40rem;
+}
+

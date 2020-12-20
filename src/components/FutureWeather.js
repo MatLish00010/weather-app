@@ -103,10 +103,10 @@ export default function FutureWeather() {
   const { data, error, loading, input, place } = state;
 
   React.useEffect(() => {
-    getFutureWeather(place)
-      .then((data) => {
+    getFutureWeather(place).then((res) => {
+      if (res) {
         let sorted = [];
-        data.list.forEach((item) => {
+        res.data.list.forEach((item) => {
           let key = item.dt_txt.split(" ")[0].replace(/-/g, "");
           if (!sorted[key]) {
             sorted[key] = [];
@@ -114,8 +114,10 @@ export default function FutureWeather() {
           sorted[key].push(item);
         });
         dispatch({ type: "success", data: sorted, place: place });
-      })
-      .catch((error) => dispatch({ type: "error", message: error.message }));
+      } else {
+        dispatch({ type: "error", message: "error" });
+      }
+    });
   }, [place]);
 
   return (

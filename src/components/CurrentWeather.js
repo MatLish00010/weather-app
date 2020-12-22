@@ -1,7 +1,8 @@
 /* eslint react/prop-types: 0 */
 import React from "react";
 import Loading from "./Loading";
-import useFetch from "../hooks/useFetch";
+import useAsync from "../hooks/useAsync";
+import axios from "axios";
 
 function Today({ data }) {
   return (
@@ -32,14 +33,22 @@ function WeatherInfo({ data }) {
   if (data) {
     return <React.Fragment>{data && <Today data={data} />}</React.Fragment>;
   }
+
+  return null;
 }
+
+const test = (place) => {
+  return axios.get(
+    `http://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=1b8f3a719f06226ac250172f1dce270d`
+  );
+};
 
 export default function CurrentWeather() {
   const [input, setInput] = React.useState("");
-  const [place, setPlace] = React.useState("Minsk");
-  const { loading, data, error } = useFetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=1b8f3a719f06226ac250172f1dce270d`
-  );
+
+  const { execute, status, value, error } = useAsync(test, "Minsk");
+
+  const loading = status === "pending";
 
   return (
     <React.Fragment>
@@ -50,12 +59,18 @@ export default function CurrentWeather() {
         value={input}
         className="input"
       />
-      <button className="btn" disabled={!input} onClick={() => setPlace(input)}>
+      <button
+        className="btn"
+        disabled={!input}
+        onClick={() => {
+          execute(input);
+        }}
+      >
         Search
       </button>
       {loading && <Loading text="Search Place" />}
-      {error && <p className="error-message">{error}</p>}
-      {!loading && !error && <WeatherInfo data={data} />}
+      {error && <p className="error-message">{error.message}</p>}
+      {!loading && !error && <WeatherInfo data={value} />}
     </React.Fragment>
   );
 }

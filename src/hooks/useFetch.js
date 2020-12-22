@@ -21,6 +21,7 @@ export default function useFetch(url) {
           setLoading(false);
         }
       })
+
       .catch((e) => {
         console.warn(`Warn message: ${e.message}`);
         setError("Error fetching data. Try again.");

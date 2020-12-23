@@ -18,7 +18,7 @@ export default function Today(object) {
         </ul>
         <img
           src={`http://openweathermap.org/img/wn/${object.value.weather[0].icon}@2x.png`}
-          alt=""
+          alt="alt"
         />
       </div>
     </article>

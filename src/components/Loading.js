@@ -8,11 +8,7 @@ const styles = {
   },
 };
 
-// eslint-disable-next-line no-unused-vars
-export default function Loading({ text = "Loading", speed = 100 }) {
-  // eslint-disable-next-line no-unused-vars
-  const [content, setContent] = React.useState(text);
-
+export default function Loading() {
   return (
     <div className="loading">
       <div className="loadingio-spinner-bean-eater-hnufo4ea5t9">

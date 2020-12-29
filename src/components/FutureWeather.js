@@ -13,7 +13,7 @@ export default function FutureWeather() {
     place: "Minsk",
   });
 
-  const { data, error, loading, input, place } = state;
+  const { data, error, loading, input = "Minsk", place } = state;
 
   React.useEffect(() => {
     getFutureWeather(place).then((res) => {
@@ -34,7 +34,6 @@ export default function FutureWeather() {
       }
     });
   }, [place]);
-
   return (
     <div>
       <h1 className="title">Future Weather</h1>

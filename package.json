@@ -8,8 +8,6 @@
     "@testing-library/user-event": "^12.2.0",
     "axios": "^0.21.0",
     "config": "^3.3.3",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-prettier": "^3.3.0",
     "get": "^1.4.0",
     "prefix": "^1.0.0",
     "react": "^17.0.1",
@@ -48,6 +46,9 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-react": "^7.21.5",
     "prettier": "2.2.1",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0"
   }
 }

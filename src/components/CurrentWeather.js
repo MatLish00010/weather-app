@@ -1,8 +1,8 @@
-import React from "react";
-import Loading from "./Loading";
-import useAsync from "../hooks/useAsync";
-import axios from "axios";
-import Today from "./Today";
+import React from 'react';
+import Loading from './Loading';
+import useAsync from '../hooks/useAsync';
+import axios from 'axios';
+import Today from './Today';
 
 const request = (place) => {
   return axios.get(
@@ -11,9 +11,11 @@ const request = (place) => {
 };
 
 export default function CurrentWeather() {
-  const [input, setInput] = React.useState("");
-  const { execute, status, value, error } = useAsync(request, "Minsk");
-  const loading = status === "pending";
+  const [input, setInput] = React.useState('');
+  const {
+    execute, status, value, error
+  } = useAsync(request, 'Minsk');
+  const loading = status === 'pending';
 
   return (
     <React.Fragment>

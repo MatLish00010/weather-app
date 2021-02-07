@@ -1,6 +1,6 @@
-import React from "react";
-import dataProcessing from "./DataProcessing";
-import PropTypes from "prop-types";
+import React from 'react';
+import dataProcessing from './DataProcessing';
+import PropTypes from 'prop-types';
 
 export default function Content({ data, name }) {
   const isContent = React.useMemo(() => dataProcessing({ data }), [data]);
@@ -14,5 +14,5 @@ export default function Content({ data, name }) {
 
 Content.propTypes = {
   data: PropTypes.array,
-  name: PropTypes.string,
+  name: PropTypes.string
 };

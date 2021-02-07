@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 const useAsync = (asyncFunction, param, immediate = true) => {
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState('idle');
   const [value, setValue] = useState(null);
   const [error, setError] = useState(null);
 
   const execute = useCallback(
     (param) => {
-      setStatus("pending");
+      setStatus('pending');
       setValue(null);
       setError(null);
 
@@ -15,11 +15,11 @@ const useAsync = (asyncFunction, param, immediate = true) => {
         .then((res) => res.data)
         .then((response) => {
           setValue(response);
-          setStatus("success");
+          setStatus('success');
         })
         .catch((error) => {
           setError(error);
-          setStatus("error");
+          setStatus('error');
         });
     },
     [asyncFunction, param]
@@ -31,7 +31,9 @@ const useAsync = (asyncFunction, param, immediate = true) => {
     }
   }, [execute, immediate]);
 
-  return { execute, status, value, error };
+  return {
+    execute, status, value, error
+  };
 };
 
 export default useAsync;

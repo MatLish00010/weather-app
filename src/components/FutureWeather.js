@@ -10,14 +10,14 @@ export default function FutureWeather() {
     error: null,
     loading: true,
     input: '',
-    place: 'Minsk'
+    place: 'Minsk',
+    openItem: null
   });
-
   const {
     data, error, loading, input = 'Minsk', place
   } = state;
-
   React.useEffect(() => {
+    // eslint-disable-next-line consistent-return
     getFutureWeather(place).then((res) => {
       if (res.message) {
         dispatch({ type: 'error', message: res.message });
@@ -52,9 +52,10 @@ export default function FutureWeather() {
       >
         Search
       </button>
-      {loading && <Loading />}
+      {loading && <Loading/>}
       {!loading && error && <p className="error-message">{error}</p>}
-      {!error && !loading && data && <Content data={data} name={place} />}
+      {/* eslint-disable-next-line max-len */}
+      {!error && !loading && data && <Content data={data} name={place}/>}
     </div>
   );
 }

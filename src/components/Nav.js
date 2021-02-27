@@ -1,8 +1,8 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const activeStyle = {
-  color: 'aliceblue'
+  color: "aliceblue",
 };
 
 export default function Nav() {

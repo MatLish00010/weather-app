@@ -1,31 +1,31 @@
 export default function FutureWeatherReducer(state, action) {
-  if (action.type === 'success') {
+  if (action.type === "success") {
     return {
       ...state,
       data: action.data,
       place: action.place,
       error: null,
-      loading: false
+      loading: false,
     };
   }
-  if (action.type === 'input') {
+  if (action.type === "input") {
     return {
       ...state,
-      input: action.input
+      input: action.input,
     };
   }
-  if (action.type === 'place') {
+  if (action.type === "place") {
     return {
       ...state,
       loading: true,
-      place: action.place
+      place: action.place,
     };
   }
-  if (action.type === 'error') {
+  if (action.type === "error") {
     return {
       ...state,
       error: action.message,
-      loading: false
+      loading: false,
     };
   }
   throw new Error('`That action type isn"t supported`');

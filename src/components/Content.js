@@ -1,11 +1,8 @@
-import React from 'react';
-import dataProcessing from './DataProcessing';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import dataProcessing from "./DataProcessing";
 
-export default function Content({
-  data, name
-}) {
-  // eslint-disable-next-line max-len
+export default function Content({ data, name }) {
   const isContent = React.useMemo(() => dataProcessing({ data }), [data]);
   return (
     <div>
@@ -16,6 +13,8 @@ export default function Content({
 }
 
 Content.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types,react/require-default-props
   data: PropTypes.array,
-  name: PropTypes.string
+  // eslint-disable-next-line react/require-default-props
+  name: PropTypes.string,
 };
